@@ -58,6 +58,7 @@
     <Compile Include="[Form]\[Window Management]\ILauncherWindow.cs" />
     <Compile Include="[Form]\[Window Management]\WindowLoader.cs" />
     <Compile Include="[Form]\[Window Management]\[Windows]\GameLibrary.cs" />
+    <Compile Include="[Form]\[Window Management]\[Windows]\LauncherWindow.cs" />
     <Compile Include="[Form]\[Window Management]\[Windows]\LoginMenu.cs" />
     <Compile Include="[Networking]\Client.cs" />
     <Compile Include="[Networking]\NetworkManager.cs" />

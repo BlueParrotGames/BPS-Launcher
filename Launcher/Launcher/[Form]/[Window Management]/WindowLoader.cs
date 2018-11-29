@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Threading;
+using System.Collections.Generic;
 using Launcher;
 
 namespace BPS.Launcher.Form.Windows
@@ -14,6 +15,8 @@ namespace BPS.Launcher.Form.Windows
 
         Main_Form _form;
 
+        Thread loopThread;
+
         public WindowLoader(Main_Form form)
         {
             Instance = this;
@@ -25,18 +28,22 @@ namespace BPS.Launcher.Form.Windows
         }
         private void InitializeWindows()
         {
-            _windows.Add(WindowType.LoginMenu, new LoginMenu(_form.Email_Input, _form.Password_Input));
+            _windows.Add(WindowType.LoginMenu, new LoginMenu(_form.Email_Input, _form.Password_Input, _form.Login_Button));
             _windows.Add(WindowType.GameLibrary, new GameLibrary());
         }
 
         public void LoadWindow(WindowType windowType)
         {
             _currentWindow?.UnloadWindow();
+            loopThread?.Abort();
 
             if(_windows.TryGetValue(windowType, out ILauncherWindow window))
             {
                 _currentWindow = window;
                 window.LoadWindow();
+
+                loopThread = new Thread(window.DoThreadLoop);
+                loopThread.Start();
             }
         }
     }

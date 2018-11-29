@@ -2,18 +2,28 @@
 
 namespace BPS.Launcher.Form.Windows
 {
-    public class GameLibrary : ILauncherWindow
+    internal class GameLibrary : LauncherWindow
     {
 
         public GameLibrary()
         {
         }
 
-        public void LoadWindow()
+        public override void LoadWindow()
         {
+            _isCurrentWindow = true;
         }
-        public void UnloadWindow()
+        public override void UnloadWindow()
         {
+            _isCurrentWindow = false;
+        }
+
+        public override void DoThreadLoop()
+        {
+            while (_isCurrentWindow)
+            {
+
+            }
         }
     }
 }
