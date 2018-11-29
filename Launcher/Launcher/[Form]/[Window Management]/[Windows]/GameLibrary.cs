@@ -4,11 +4,9 @@ namespace BPS.Launcher.Form.Windows
 {
     public class GameLibrary : ILauncherWindow
     {
-        private Main_Form _form;
 
-        public GameLibrary(Main_Form form)
+        public GameLibrary()
         {
-            _form = form;
         }
 
         public void LoadWindow()

@@ -66,7 +66,6 @@ namespace Launcher
             this.Email_Input.Name = "Email_Input";
             this.Email_Input.Size = new System.Drawing.Size(376, 32);
             this.Email_Input.TabIndex = 0;
-            this.Email_Input.Text = "0";
             this.Email_Input.WordWrap = false;
             // 
             // Password_Input
@@ -79,7 +78,6 @@ namespace Launcher
             this.Password_Input.Name = "Password_Input";
             this.Password_Input.Size = new System.Drawing.Size(376, 32);
             this.Password_Input.TabIndex = 1;
-            this.Password_Input.UseSystemPasswordChar = true;
             // 
             // Main_Form
             // 

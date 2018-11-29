@@ -25,8 +25,8 @@ namespace BPS.Launcher.Form.Windows
         }
         private void InitializeWindows()
         {
-            _windows.Add(WindowType.LoginMenu, new LoginMenu(_form));
-            _windows.Add(WindowType.GameLibrary, new GameLibrary(_form));
+            _windows.Add(WindowType.LoginMenu, new LoginMenu(_form.Email_Input, _form.Password_Input));
+            _windows.Add(WindowType.GameLibrary, new GameLibrary());
         }
 
         public void LoadWindow(WindowType windowType)
