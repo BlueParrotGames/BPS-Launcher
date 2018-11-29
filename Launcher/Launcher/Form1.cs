@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using BPS.Launcher.Form;
+
 namespace Launcher
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
-        public Form1()
+        public Main_Form()
         {
             InitializeComponent();
+
+            this.MouseDown += MainForm_MouseDown;
+
+            new FormManager(this);
         }
     }
 }

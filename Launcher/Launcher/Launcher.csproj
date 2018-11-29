@@ -54,8 +54,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="[Form]\FormManager.cs" />
+    <Compile Include="[Form]\[Window Management]\FormWindow.cs" />
+    <Compile Include="[Form]\[Window Management]\WindowLoader.cs" />
     <Compile Include="[Networking]\Client.cs" />
-    <Compile Include="[Networking]\ClientManager.cs" />
+    <Compile Include="[Networking]\NetworkManager.cs" />
     <Compile Include="[Networking]\[Data]\Enums.cs" />
     <Compile Include="[Networking]\[Data]\[Handlers]\DataHandler.cs" />
     <Compile Include="[Networking]\[Data]\[Handlers]\PacketHandler.cs" />
