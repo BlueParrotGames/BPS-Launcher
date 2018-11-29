@@ -54,6 +54,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="[Networking]\Client.cs" />
+    <Compile Include="[Networking]\ClientManager.cs" />
+    <Compile Include="[Networking]\[Data]\Enums.cs" />
+    <Compile Include="[Networking]\[Data]\[Handlers]\DataHandler.cs" />
+    <Compile Include="[Networking]\[Data]\[Handlers]\PacketHandler.cs" />
+    <Compile Include="[Networking]\[Data]\[Packets]\NetworkPackage.cs" />
+    <Compile Include="[Networking]\[Data]\[Packets]\NetworkPacketPool.cs" />
+    <Compile Include="[Networking]\[Data]\[Senders]\NetworkSender.cs" />
+    <Compile Include="[Networking]\[Data]\[Senders]\NetworkSendingLoop.cs" />
+    <Compile Include="[Networking]\[Data]\[Senders]\NetworkSendingQueue.cs" />
+    <Compile Include="[Networking]\[Utility]\ByteBuffer.cs" />
+    <Compile Include="[Networking]\[Utility]\[Security]\VerificationLogic.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,5 +91,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
