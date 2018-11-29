@@ -52,46 +52,53 @@ namespace Launcher
         /// </summary>
         private void InitializeComponent()
         {
-            this.LoginPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.LoginPanel.SuspendLayout();
+            this.Email_Input = new System.Windows.Forms.TextBox();
+            this.Password_Input = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // LoginPanel
+            // Email_Input
             // 
-            this.LoginPanel.Controls.Add(this.button1);
-            this.LoginPanel.Location = new System.Drawing.Point(255, 96);
-            this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(200, 100);
-            this.LoginPanel.TabIndex = 0;
-            this.LoginPanel.Visible = false;
+            this.Email_Input.AcceptsReturn = true;
+            this.Email_Input.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Email_Input.Font = new System.Drawing.Font("Roboto Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email_Input.Location = new System.Drawing.Point(12, 258);
+            this.Email_Input.MaxLength = 50;
+            this.Email_Input.Name = "Email_Input";
+            this.Email_Input.Size = new System.Drawing.Size(376, 32);
+            this.Email_Input.TabIndex = 0;
+            this.Email_Input.Text = "0";
+            this.Email_Input.WordWrap = false;
             // 
-            // button1
+            // Password_Input
             // 
-            this.button1.Location = new System.Drawing.Point(3, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Password_Input.AcceptsReturn = true;
+            this.Password_Input.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Password_Input.Font = new System.Drawing.Font("Roboto Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password_Input.Location = new System.Drawing.Point(12, 296);
+            this.Password_Input.MaxLength = 50;
+            this.Password_Input.Name = "Password_Input";
+            this.Password_Input.Size = new System.Drawing.Size(376, 32);
+            this.Password_Input.TabIndex = 1;
+            this.Password_Input.UseSystemPasswordChar = true;
             // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 681);
-            this.Controls.Add(this.LoginPanel);
+            this.ClientSize = new System.Drawing.Size(400, 600);
+            this.Controls.Add(this.Password_Input);
+            this.Controls.Add(this.Email_Input);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.HelpButton = true;
             this.Name = "Main_Form";
-            this.Text = "Form1";
-            this.LoginPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         #endregion
 
-        public System.Windows.Forms.Panel LoginPanel;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox Email_Input;
+        public System.Windows.Forms.TextBox Password_Input;
     }
 }
 

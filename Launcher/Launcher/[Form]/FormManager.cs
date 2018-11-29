@@ -1,4 +1,5 @@
 ﻿using Launcher;
+
 using BPS.Launcher.Form.Windows;
 
 namespace BPS.Launcher.Form
@@ -7,14 +8,11 @@ namespace BPS.Launcher.Form
     {
         private Main_Form _mainForm;
 
-        //External managers
-        private WindowLoader _windowLoader;
-
         public FormManager(Main_Form mainForm)
         {
             _mainForm = mainForm;
 
-            _windowLoader = new WindowLoader(mainForm);
+            new WindowLoader(mainForm).LoadWindow(WindowLoader.WindowType.LoginMenu);
         }
     }
 }

@@ -18,9 +18,9 @@ namespace Launcher
         {
             InitializeComponent();
 
-            this.MouseDown += MainForm_MouseDown;
-
             new FormManager(this);
+
+            MouseDown += MainForm_MouseDown;
         }
     }
 }

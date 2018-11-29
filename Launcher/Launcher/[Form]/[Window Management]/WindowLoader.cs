@@ -1,49 +1,43 @@
-﻿using System.Drawing;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 using Launcher;
 
 namespace BPS.Launcher.Form.Windows
 {
     public class WindowLoader
     {
-        private Main_Form _form;
-        private Dictionary<WindowType, FormWindow> _presetWindows;
+        public static WindowLoader Instance;
 
-        private FormWindow _currentWindow;
+        public enum WindowType { LoginMenu, GameLibrary}
+
+        private Dictionary<WindowType, ILauncherWindow> _windows;
+        private ILauncherWindow _currentWindow;
+
+        Main_Form _form;
 
         public WindowLoader(Main_Form form)
         {
+            Instance = this;
+
             _form = form;
 
-            _presetWindows = new Dictionary<WindowType, FormWindow>();
-
-            InitializePresetWindows();
-
-            LoadWindow(WindowType.LoginWindow);
+            _windows = new Dictionary<WindowType, ILauncherWindow>();
+            InitializeWindows();
         }
-        private void InitializePresetWindows()
+        private void InitializeWindows()
         {
-            _presetWindows.Add(WindowType.LoginWindow, new FormWindow(1000, 1000, _form.LoginPanel));
+            _windows.Add(WindowType.LoginMenu, new LoginMenu(_form));
+            _windows.Add(WindowType.GameLibrary, new GameLibrary(_form));
         }
 
         public void LoadWindow(WindowType windowType)
         {
-            if(_presetWindows.TryGetValue(windowType, out FormWindow window))
+            _currentWindow?.UnloadWindow();
+
+            if(_windows.TryGetValue(windowType, out ILauncherWindow window))
             {
-                LoadWindow(window);
+                _currentWindow = window;
+                window.LoadWindow();
             }
-        }
-        public void LoadWindow(FormWindow window)
-        {
-            _currentWindow.Panel.Enabled = false;
-            _currentWindow.Panel.Visible = false;
-
-            _form.Size = new Size(window.WindowWidth, window.WindowHeight);
-            window.Panel.Visible = true;
-            window.Panel.Enabled = true;
-
-            _currentWindow = window;
         }
     }
 }
