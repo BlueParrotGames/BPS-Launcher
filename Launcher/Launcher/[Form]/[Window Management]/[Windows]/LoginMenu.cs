@@ -6,8 +6,11 @@ using Launcher;
 
 namespace BPS.Launcher.Form.Windows
 {
-    internal class LoginMenu : LauncherWindow
+    internal class LoginMenu : ILauncherWindow
     {
+        private const string emailPlaceholderText = "Insert e-mail...";
+        private const string passwordPlaceholderText = "Insert password...";
+
         private TextBox _emailBox;
         private TextBox _passwordBox;
         private Button _loginButton;
@@ -18,13 +21,13 @@ namespace BPS.Launcher.Form.Windows
             _passwordBox = passwordBox;
             _loginButton = loginButton;
 
-            _emailBox.Text = "Insert e-mail...";
-            _passwordBox.Text = "Insert password...";
+            _emailBox.Text = emailPlaceholderText;
+            _passwordBox.Text = passwordPlaceholderText;
             _emailBox.ForeColor = Color.LightGray;
             _passwordBox.ForeColor = Color.LightGray;
         }
 
-        public override void LoadWindow()
+        public void LoadWindow()
         {
             Main_Form.Instance.ReSize(400, 600);
 
@@ -34,9 +37,10 @@ namespace BPS.Launcher.Form.Windows
             _passwordBox.Enabled = true;
             _passwordBox.Visible = true;
 
-            _isCurrentWindow = true;
+            _loginButton.Enabled = true;
+            _loginButton.Visible = true;
         }
-        public override void UnloadWindow()
+        public void UnloadWindow()
         {
             _emailBox.Enabled = false;
             _emailBox.Visible = false;
@@ -44,15 +48,8 @@ namespace BPS.Launcher.Form.Windows
             _passwordBox.Enabled = false;
             _passwordBox.Visible = false;
 
-            _isCurrentWindow = false;
-        }
-
-        public override void DoThreadLoop()
-        {
-            while (_isCurrentWindow)
-            {
-
-            }
+            _loginButton.Enabled = false;
+            _loginButton.Visible = false;
         }
     }
 }

@@ -52,22 +52,10 @@ namespace Launcher
         /// </summary>
         private void InitializeComponent()
         {
-            this.Email_Input = new System.Windows.Forms.TextBox();
             this.Password_Input = new System.Windows.Forms.TextBox();
             this.Login_Button = new System.Windows.Forms.Button();
+            this.Email_Box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // Email_Input
-            // 
-            this.Email_Input.AcceptsReturn = true;
-            this.Email_Input.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Email_Input.Font = new System.Drawing.Font("Roboto Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email_Input.Location = new System.Drawing.Point(12, 258);
-            this.Email_Input.MaxLength = 50;
-            this.Email_Input.Name = "Email_Input";
-            this.Email_Input.Size = new System.Drawing.Size(376, 32);
-            this.Email_Input.TabIndex = 0;
-            this.Email_Input.WordWrap = false;
             // 
             // Password_Input
             // 
@@ -92,14 +80,25 @@ namespace Launcher
             this.Login_Button.Text = "Login";
             this.Login_Button.UseVisualStyleBackColor = false;
             // 
+            // Email_Box
+            // 
+            this.Email_Box.AcceptsReturn = true;
+            this.Email_Box.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Email_Box.Font = new System.Drawing.Font("Roboto Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email_Box.Location = new System.Drawing.Point(12, 258);
+            this.Email_Box.MaxLength = 50;
+            this.Email_Box.Name = "Email_Box";
+            this.Email_Box.Size = new System.Drawing.Size(376, 32);
+            this.Email_Box.TabIndex = 4;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 600);
+            this.Controls.Add(this.Email_Box);
             this.Controls.Add(this.Login_Button);
             this.Controls.Add(this.Password_Input);
-            this.Controls.Add(this.Email_Input);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Name = "Main_Form";
@@ -108,10 +107,9 @@ namespace Launcher
 
         }
         #endregion
-
-        public System.Windows.Forms.TextBox Email_Input;
         public System.Windows.Forms.TextBox Password_Input;
         public System.Windows.Forms.Button Login_Button;
+        public System.Windows.Forms.TextBox Email_Box;
     }
 }
 

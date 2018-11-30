@@ -10,6 +10,5 @@ namespace BPS.Launcher.Form.Windows
     {
         void UnloadWindow();
         void LoadWindow();
-        void DoThreadLoop();
     }
 }
