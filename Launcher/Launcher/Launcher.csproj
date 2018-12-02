@@ -55,7 +55,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="[Networking]\Client.cs" />
-    <Compile Include="[Networking]\ClientManager.cs" />
+    <Compile Include="[Networking]\NetworkManager.cs" />
+    <Compile Include="[Networking]\PHPClient.cs" />
     <Compile Include="[Networking]\[Data]\Enums.cs" />
     <Compile Include="[Networking]\[Data]\[Handlers]\DataHandler.cs" />
     <Compile Include="[Networking]\[Data]\[Handlers]\PacketHandler.cs" />
