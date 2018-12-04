@@ -39,5 +39,17 @@ namespace BPS.Launcher.Networking
                 Console.WriteLine("Please check your internet, or tell a programmer");
             }
         }
+
+        public static void CloseConnection(string url)
+        {
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+
+            HttpWebResponse response = (HttpWebResponse)req.GetResponse();
+            Stream resStream = response.GetResponseStream();
+            StreamReader sr = new StreamReader(response.GetResponseStream());
+
+            string responseMSG = sr.ReadToEnd();
+            Console.WriteLine(responseMSG);
+        }
     }
 }

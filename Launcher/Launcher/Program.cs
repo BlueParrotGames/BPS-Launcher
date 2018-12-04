@@ -21,6 +21,8 @@ namespace Launcher
             PHPClient.Login("http://localhost/ext_connect_sql/requestlogin.php", "test1", "test1");
 
             Application.Run(new Form1());
+
+            PHPClient.CloseConnection("http://localhost/ext_connect_sql/closeconnection.php");
         }
     }
 }
