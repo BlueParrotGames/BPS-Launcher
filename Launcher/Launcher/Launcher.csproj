@@ -55,7 +55,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="[Login System]\LoginManager.cs" />
-    <Compile Include="[Login System]\PHPClient.cs" />
     <Compile Include="[Login System]\PHPCore.cs" />
     <Compile Include="[Networking]\Client.cs" />
     <Compile Include="[Networking]\NetworkManager.cs" />
