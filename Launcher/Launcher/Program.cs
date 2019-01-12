@@ -17,8 +17,10 @@ namespace Launcher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             PHPCore.Initiate("http://localhost/Core/NetCore.php");
             PHPCore.Write("action=Login&username=test1&password=test1");
+
             Application.Run(new Form1());
         }
     }

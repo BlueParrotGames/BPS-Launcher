@@ -2,6 +2,7 @@
 using System.Text;
 using System.IO;
 using System.Net;
+using System.Windows.Forms;
 
 namespace BPS.Launcher.Networking
 {
@@ -22,8 +23,6 @@ namespace BPS.Launcher.Networking
                 
                 response = (HttpWebResponse)req.GetResponse();
                 reader = new StreamReader(response.GetResponseStream());
-
-                Console.WriteLine(reader.ReadToEnd());
 
                 reader.Close();
             }
